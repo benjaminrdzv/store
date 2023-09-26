@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <title>Hero Section Nike Page</title>
+</head>
+
+<style>
+:root {
+    /* COLORES */
+    --color_rojoNike: #E72929;
+    --color_rojoNike_atenuado: #e72929e2;
+    --color_fondo: #ececec;
+    /* TAMAÑOS */
+    --ancho_maximo: 1200px;
+    --margin_left_right: 20px;
+    --altura_header: 80px;
+    /* TAMAÑO DE FUENTE */
+    --fuente_hero_title: clamp(1.5rem, 10vw, 5rem);
+    --fuente_hero_link: clamp(1.5rem, 4vw, 2.3rem);
+}
+/* Reseteo de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color_fondo);
+
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* HEADER STYLE */
+
+header{
+    height: var(--altura_header);
+    /*background-color: rgb(0, 0, 0);*/
+}
+
+.navbar{
+    height: 100%;
+    margin: 0 auto;
+    width: min(1100px, 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--margin_left_right);
+    position: relative;
+}
+.logo{
+    width: 70px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+.icon_hamburgesa{
+    font-size: 30px;
+    cursor: pointer;
+}
+.input_hamburguesa:checked + .ul_links{
+    height: calc(100vh - var(--altura_header));
+}
+.input_hamburguesa{
+    display: none;
+}
+
+.ul_links{
+    background-color: rgba(0, 0, 0, 0.293);
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    top: var(--altura_header);
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 4rem;
+
+    transition: height 1s;
+}
+
+.link{
+    font-size: 3rem;  
+    color:white;
+}
+
+
+/* HERO SECTION STYLE */
+.main {
+    width: 100%;
+}
+.hero_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--altura_header));
+
+    position: relative;
+}
+.hero_text_container {
+
+    flex-grow: 1;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+.hero_title {
+    font-size: var(--fuente_hero_title);
+    margin-bottom: 1rem;
+}
+.hero_button {
+    font-size: var(--fuente_hero_link);
+    border: 0;
+    width: max-content;
+    margin: 0 auto;
+    padding: .3rem .9rem;
+    border-radius: 1rem;
+    background-color: var(--color_rojoNike);
+    color: var(--color_fondo);
+    font-weight: bold;
+}
+.hero_img_container {
+    flex-grow: 1;
+}
+.hero_image {
+    width: 100%;
+    max-height: 400px;
+    position: relative;
+    z-index: 10;
+    object-fit:cover ;
+}
+.waveMobile{
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.waveDesktop{
+    display: none;
+}
+
+
+
+@media (min-width:1000px){
+    .hero_section {
+        flex-direction: row;
+    }
+    .waveMobile{
+        display: none;
+    }
+    .waveDesktop{
+        display: block;
+        height: 50vw;
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .hero_text_container{
+        width: 50%;
+    }
+    .icon_hamburgesa{
+        display: none;
+    }
+    .ul_links{
+        display: flex;
+        position: static;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+    }
+
+    .link{
+        font-size: 1.6rem;
+    }
+    
+}
+.icon_bag{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+</style>
+
+
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+
+            <label for="menu_hamburguesa">
+                <i class="bi bi-list icon_hamburgesa"></i>
+                <a href="#">
+                    <img class="logo" src="/nike_hero_section-main/nike_hero_section-main/assets/logoNike.png" alt="Logo Nike">
+                </a>
+            </label>
+                <i class="bi bi-bag icon_bag"></i>
+
+
+
+            <input class="input_hamburguesa" type="checkbox" name="" id="menu_hamburguesa">
+
+            <ul class="ul_links">
+                <li class="li_link">
+                    <a class="link" href="#">ver todo</a>
+                </li>
+                <li class="li_link">
+                    <a class="link" href="#">accesorios</a>
+                </li>
+                <li class="li_link">
+                    <a class="link" href="#">mas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero_section">
+            <article class="hero_text_container">
+                <h1 class="hero_title">JUST DO IT</h1>        
+                
+                <button class="hero_button">DO IT</button>
+            </article>
+
+            <div class="hero_img_container">
+                <img class="hero_image" src="/nike_hero_section-main/nike_hero_section-main/assets/zapatillasNikeDesktop.png" alt="">
+            </div>
+
+            <img class="waveMobile" src="/nike_hero_section-main/nike_hero_section-main/assets/mobile/wabeMobile.png" alt="">
+        </section>
+        <img class="waveDesktop" src="/nike_hero_section-main/nike_hero_section-main/assets/desktop/waveDesktop.png" alt="">
+    </main>
+</body>
+</html>
