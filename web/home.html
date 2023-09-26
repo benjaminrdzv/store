@@ -14,7 +14,7 @@
     /* COLORES */
     --color_rojoNike: #E72929;
     --color_rojoNike_atenuado: #e72929e2;
-    --color_fondo: #ececec;
+    --color_fondo: white;
     /* TAMAÑOS */
     --ancho_maximo: 1200px;
     --margin_left_right: 20px;
@@ -117,6 +117,23 @@ header{
 
     position: relative;
 }
+.hero_section1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    position: relative;
+}
+
+.hero_section2{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+
+    position: relative;
+}
 .hero_text_container {
 
     flex-grow: 1;
@@ -135,9 +152,10 @@ header{
     margin: 0 auto;
     padding: .3rem .9rem;
     border-radius: 1rem;
-    background-color: var(--color_rojoNike);
+    background-color:rgb(255, 0, 0);
     color: var(--color_fondo);
     font-weight: bold;
+    cursor: pointer;
 }
 .hero_img_container {
     flex-grow: 1;
@@ -149,6 +167,7 @@ header{
     z-index: 10;
     object-fit:cover ;
 }
+
 .waveMobile{
     height: 50vh;
     position: absolute;
@@ -158,46 +177,42 @@ header{
 .waveDesktop{
     display: none;
 }
-
-
-
-@media (min-width:1000px){
-    .hero_section {
-        flex-direction: row;
-    }
-    .waveMobile{
-        display: none;
-    }
-    .waveDesktop{
-        display: block;
-        height: 50vw;
-        height: 100vh;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .hero_text_container{
-        width: 50%;
-    }
-    .icon_hamburgesa{
-        display: none;
-    }
-    .ul_links{
-        display: flex;
-        position: static;
-        height: auto;
-        width: auto;
-        background-color: transparent;
-    }
-
-    .link{
-        font-size: 1.6rem;
-    }
-    
-}
 .icon_bag{
     font-size: 20px;
     cursor: pointer;
+}
+
+.polaroid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - var(--altura_header));
+    max-height: 400px;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+.polaroid2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - var(--altura_header));
+    max-height: 400px;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+
+.descripcion{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.talla{
+    font-weight: lighter;
+    font-size: small;
+}
+
+.carrucel{
+    flex-direction: row;
 }
 
 </style>
@@ -211,7 +226,7 @@ header{
             <label for="menu_hamburguesa">
                 <i class="bi bi-list icon_hamburgesa"></i>
                 <a href="#">
-                    <img class="logo" src="/nike_hero_section-main/nike_hero_section-main/assets/logoNike.png" alt="Logo Nike">
+                    <img class="logo" src="logoNike.png" alt="Logo Nike">
                 </a>
             </label>
                 <i class="bi bi-bag icon_bag"></i>
@@ -237,18 +252,49 @@ header{
     <main class="main">
         <section class="hero_section">
             <article class="hero_text_container">
-                <h1 class="hero_title">JUST DO IT</h1>        
-                
-                <button class="hero_button">DO IT</button>
+                <h1 class="hero_title">NEW BEGINNING</h1>        
+                <a  class="hero_button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <button class="hero_button">DON'T</button>
+                </a>
             </article>
 
             <div class="hero_img_container">
-                <img class="hero_image" src="/nike_hero_section-main/nike_hero_section-main/assets/zapatillasNikeDesktop.png" alt="">
+                <img class="hero_image" src="polaroid.png" alt="">
             </div>
 
-            <img class="waveMobile" src="/nike_hero_section-main/nike_hero_section-main/assets/mobile/wabeMobile.png" alt="">
+            <img class="waveMobile" src="wabeMobile.png" alt="">
         </section>
-        <img class="waveDesktop" src="/nike_hero_section-main/nike_hero_section-main/assets/desktop/waveDesktop.png" alt="">
     </main>
+    <br/>
+    <div class="productos">
+        <section class="hero_section1">
+            <div class="hero_img_container">
+                <div class="carrucel">
+                    <div class="obj1">
+                            <img class="hero_image" src="polaroid.png" alt="">            
+                        <div class="descripcion">
+                            <p>PLAYERA</p>
+                            <p class="talla">TALLA</p>
+                            <p>XL L S</p>
+                        </div>
+                    </div>
+                    <div class="obj2">
+                        <div class="hero_img_container">
+                            <img class="hero_image" src="polaroid.png" alt="">
+                        </div>
+                        <div class="descripcion">
+                            <p>PLAYERA</p>
+                            <p class="talla">TALLA</p>
+                            <p>XL L S</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <br/>
+    </div>
+    <br/>
+    <br/>
+    <br/>
 </body>
 </html>
